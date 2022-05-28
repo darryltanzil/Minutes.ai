@@ -1,4 +1,4 @@
-# Scribe.AI
+# Scribe.ai
 
 ## Description
 
