@@ -27,7 +27,7 @@
 
     padding-bottom: 30px;
     padding-left: 50px;
-    padding-right: 50px;
+    /* padding-right: 50px; */
 }
 
 .heading-editor {
@@ -51,8 +51,13 @@
     flex-grow: 1;
     resize: none;
     border-style: none;
+
+    padding-right: 50px;
 }
 .body-editor:focus {
     outline: none !important;
     border-color: rgba(0,0,0,0);
+}
+.body-editor::-webkit-scrollbar {
+    display: none;
 }

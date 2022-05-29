@@ -3,6 +3,7 @@ import './App.css';
 import { appContext } from './Context';
 import Sidebar from "./components/sidebar/Sidebar"
 import Texteditor from './components/texteditor/Texteditor';
+import Transcribe from './components/transcribe/Transcribe';
 import Mockdata from './Mockdata';
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
         <Sidebar live="Spring Fling Planning"/>
         <div className="UI-container">
           <Texteditor/>
-          {/* <Transcription/> */}
+          <Transcribe/>
         </div>
       </div>
     </appContext.Provider>
