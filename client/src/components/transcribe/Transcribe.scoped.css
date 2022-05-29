@@ -39,6 +39,7 @@
 }
 
 .transcribe-content {
+    width: 100%;
     border: none;
     background-color: transparent;
     font-weight: 200;

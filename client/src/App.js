@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './App.css';
 import { appContext } from './Context';
 import Sidebar from "./components/sidebar/Sidebar"
@@ -6,6 +6,9 @@ import Texteditor from './components/texteditor/Texteditor';
 import Transcribe from './components/transcribe/Transcribe';
 import Mockdata from './Mockdata';
 import RecordRTC from 'recordrtc';
+import axios from 'axios'; 
+const { Configuration, OpenAIApi } = require("openai");
+ 
 
 
 function App() {
@@ -13,16 +16,33 @@ function App() {
   const [muted, setMuted] = useState(true)
   const [selected, setSelected] = useState(0)
   const [writeTo, setWriteTo] = useState(0)
+  const [transcription, setTranscription] = useState("")
 
-  const [apiResponse, setApiResponse] = useState("")
+  const isMounted = useRef(false)
+
+  const [textToAudio, setTextToAudio] = useState("")
+
+  const [openAI, setOpenAI] = useState("")
 
   useEffect(() => {
-    initializeAPI();
-    callAPI()
-  },[]);
+    console.log(transcription)
+  }, [transcription])
+
+  const reactData = [{ id: 1, name:' Tom'}, { id: 2, name:' Sarah'}];
+const url = 'localhost:9000/summary';
+
+  let sendData = () => {
+  axios.post(url, reactData)
+    .then(res => console.log('Data send'))
+    .catch(err => console.log(err.data))
+  }
 
   useEffect(() => {
-    if (!muted) document.getElementById("fake-button").click()
+    if (isMounted.current) {
+      if (!muted) document.getElementById("fake-button").click()
+    } else {
+      isMounted.current = true
+    }
   }, [muted])
 
   useEffect(() => {
@@ -47,10 +67,10 @@ function App() {
     </appContext.Provider>
   )
 
-  function callAPI() {
+  function callAudioToText() {
     fetch("http://localhost:8000/")
         .then(res => res.text())
-        .then(res => setApiResponse(res));
+        .then(res => setTextToAudio(res));
   }
 
 
@@ -126,6 +146,7 @@ const startRecording = async () => {
         }
       }
       messageEl.innerText = msg;
+      setTranscription(msg)
 
       // Send transcribed message to note summarizer API
       
