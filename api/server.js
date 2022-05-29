@@ -1,31 +1,33 @@
 const express = require('express')
 const app = express();
-const port = 3000;
+const port = 8000;
 
 var fs = require('fs');
-var portAudio = require('naudiodon');
 
-// Create an instance of AudioIO with inOptions (defaults are as below), which will return a ReadableStream
-var ai = new portAudio.AudioIO({
-  inOptions: {
-    channelCount: 1,
-    sampleFormat: portAudio.SampleFormat16Bit,
-    sampleRate: 44100,
-    deviceId: -1, // Use -1 or omit the deviceId to select the default device
-    closeOnError: true // Close the stream if an audio error is detected, if set false then just log the error
+
+const axios = require('axios');
+const cors = require('cors');
+
+app.use(express.json());
+app.use(cors());
+
+app.get('/', async (req, res) => {
+  try {
+    const response = await axios.post('https://api.assemblyai.com/v2/realtime/token', 
+      { expires_in: 3600 },
+      { headers: { authorization: 'YOUR_TOKEN' } });
+    const { data } = response;
+    res.json(data);
+  } catch (error) {
+    const {response: {status, data}} = error;
+    res.status(status).json(data);
   }
 });
 
-// Create a write stream to write out to a raw audio file
-var ws = fs.createWriteStream('recording.wav');
-
-//Start streaming
-ai.pipe(ws);
-ai.start();
-
-setTimeout(function() {
-  ai.quit()
-}, 5000);
+app.set('port', 8000);
+const server = app.listen(app.get('port'), () => {
+  console.log(`Server is running on port ${server.address().port}`);
+});
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
