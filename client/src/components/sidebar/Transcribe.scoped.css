@@ -1,0 +1,45 @@
+.transcribe-container {
+    background-color: #F5F5F5;
+    width: 500px;
+    color: #777777;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.transcribe-title {
+    text-align: left;
+    padding-top: 40px;
+    margin-bottom: 30px;
+    height: 50px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.transcribe-indicator{
+    position: relative;
+    float: left;
+    margin-right: 7px;
+}
+.transcribe-content {
+    font-size: 0.8rem;
+    resize: none;
+    width: 115%;
+    float: left;
+    height: 95%;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    font-family: "Inter";
+    font-weight: 200 !important;
+    padding-right: 10%;
+    padding-left: 15%;
+}
+
