@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './Sidebar.scoped.css';
 import { BsMicFill, BsFillMicMuteFill, BsPlus } from "react-icons/bs"
-import Mockdata from './Mockdata';
 import { appContext } from '../../Context';
 
 function Sidebar(props) {
@@ -13,13 +12,8 @@ function Sidebar(props) {
     useEffect(() => {
         let tempArr = notes.map((note, index) => {
             return (
-                <div className={selected===note.id? "notebar selected":"notebar"} onClick={() => {
-                    if (selected===note.id) {
-                        setSelected(false)
-                    } else {
-                        setSelected(note.id)
-                    }}}>
-                    {note.heading}
+                <div className={selected===note.id? "notebar selected":"notebar"} onClick={() => setSelected(note.id)}>
+                    <div className="notebar-text">{note.title==""? "Untitled":note.title}</div>
                 </div>
             )
         })
@@ -51,7 +45,7 @@ function Sidebar(props) {
 
     function addNote() {
         let tempArr = notes.slice()
-        tempArr.push({id: notes.length, heading: "New Notes", text:""})
+        tempArr.push({id: notes.length, title: "New Notes", text:""})
         setNotes(tempArr)
     }
 }
