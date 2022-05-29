@@ -26,7 +26,7 @@ We are ecstatic that we were able to persevere through all the bugs and glitches
 * Working with JS promises via Axios
 *  Power naps help a lot
 
-## What's next for Scribe.ai
+## What's next for Minutes.ai
 * Developed exporting options for Google Docs, Word, etc.
 * Allow Markdown options for our built in text-editor
 * Incorporate a login system, so permanent data can be stored
