@@ -29,6 +29,8 @@ We're proud that we were able to persevere through all the bugs and glitches to 
 * API GET requests
 * Working with JS promises via Axios
 * Power naps help a lot
+* Testing and communication is super important- otherwise misunderstandings may occur
+* Work to people's strengths. If one person knows Express, and the other knows front-end, let them fly!
 
 ## What's next for Minutes.ai
 * Developed exporting options for Google Docs, Word, etc.
