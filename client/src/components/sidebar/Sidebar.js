@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './Sidebar.scoped.css';
+import backdrop from "./backdrop.png"
 import { BsMicFill, BsFillMicMuteFill, BsPlus } from "react-icons/bs"
 import { appContext } from '../../Context';
 
@@ -25,8 +26,8 @@ function Sidebar(props) {
         <div className="sidebar-container">
             <div className="sidebar-live">
                 <div className="live-bar">
-                    <div className="live-indicator"></div>
-                    <p className="live-tag"><p style={{fontWeight: "600"}}>Live:&nbsp;</p>{props.live}</p>
+                    <div className="live-indicator" style={muted? {display: "none"}:{}}></div>
+                    <div className="live-tag"><p style={{fontWeight: "600"}}>Live:&nbsp;</p>{props.live}</div>
                 </div>
                 <div className={muted? "btt-mic btt-mic-muted":"btt-mic"} onClick={() => {setMuted(!muted)}}>
                     {muted? <BsFillMicMuteFill className="icon-mic-muted"/>:<BsMicFill className="icon-mic"/>}
