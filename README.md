@@ -1,5 +1,9 @@
 # Minutes.ai
 
+## Inspiration
+
+Meetings. So many meetings. While brainstorming ideas for the hackathon, we realized that we were spending a considerable amount of time documenting what we were doing- precious time that could have been spent actually hacking along. This is where Minutes.ai comes in.
+
 ## What it does
 
 For To Hacks 2022, we've engineered an app which allows users to forego the typical administration required when holding meetings. Minutes.ai takes in audio held in meetings, transcribes it, intelligently separates it into bite size chunks of ideas, and then summarizes it into point form, all in Realtime. Through Artificial intelligene, this allows the person assigned the task of writing notes to have a template in which they can work from, so all the members can focus on what really matters- the content of the meeting.
