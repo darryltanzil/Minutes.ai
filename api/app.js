@@ -6,6 +6,9 @@ var logger = require('morgan');
 var cors = require("cors");
 
 
+
+var summary = require('./routes/summary');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testAPIRouter = require("./routes/testAPI");
@@ -33,15 +36,15 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+var port = 3000;
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}!`)
+  const new_text = summary.exportSummary('Bob likes apples. Bob also likes bananas. He walks to the fruit market every morning to buy bananas.')
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}!`)
-//   const new_text = Summary('Bob likes apples. Bob also likes bananas. He walks to the fruit market every morning to buy bananas.')
-
-// new_text.then(response =>{
-//   console.log(response)
-// })
-// });
+new_text.then(response =>{
+  console.log(response)
+})
+});
 
 // error handler
 app.use(function(err, req, res, next) {
