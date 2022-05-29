@@ -2,7 +2,7 @@
 
 ## Inspiration
 
-Meetings. So many meetings. While brainstorming ideas for the hackathon, we realized that we were spending a considerable amount of time documenting what we were doing- precious time that could have been spent actually hacking along. This is where Minutes.ai comes in.
+Meetings. So many meetings. While brainstorming ideas for the hackathon, we realized that we were spending a considerable amount of time documenting what we were doing- precious time that could have been spent actually hacking along. This is where the idea of Minutes.ai was born.
 
 ## What it does
 
