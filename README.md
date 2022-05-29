@@ -19,12 +19,12 @@ While working on this project, we ran into a series of technical issues, which w
 * **API communication issues**- originally, we had many issues with getting Assembly AI and Open AI to send data to and from each other. After staying up until 4am to resolve these issues, we finally got it to work!
 
 ## Accomplishments that we're proud of
-We are ecstatic that we were able to persevere through all the bugs and glitches to produce a product we are truly proud to present. We hope that the work we did now will prevent much more work for anyone looking to hold meetings in the future, and that this product will truly be useful to many.
+We're excited that we were able to persevere through all the bugs and glitches to produce a product we are truly proud to present. We wish that the work we did now will prevent much more work for anyone looking to hold meetings in the future, and that this product will be useful in both academic settings, and professional settings.
 
 ## What we learned
 * API GET requests
 * Working with JS promises via Axios
-*  Power naps help a lot
+* Power naps help a lot
 
 ## What's next for Minutes.ai
 * Developed exporting options for Google Docs, Word, etc.
