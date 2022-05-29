@@ -1,5 +1,5 @@
 .sidebar-container {
-    width: 400px;
+    width: 450px;
     height: 100%;
 
     padding-top: 30px;
@@ -48,15 +48,16 @@
 }
 
 .live-tag {
-    max-height: 16px;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     overflow-x: hidden;
+    white-space: nowrap;
 
     margin-left: 10px;
 }
 
-.btt-mute {
+.btt-mic {
     min-width: 40px;
     height: 40px;
 
@@ -68,17 +69,85 @@
 
     border-radius: 10px;
     background-color: #ECF8FF;
+    cursor: pointer;
+    transition: 200ms;
+}
+.btt-mic-muted {
+    background-color: #FFC6C6;
+    transition: 200ms;
 }
 
-.icon-mute {
+.icon-mic {
     fill: #378DCC;
+    transition: 200ms;
+}
+.icon-mic-muted {
+    fill: #FF6666;
+    transition: 200ms;
 }
 
+/*----------Notebar---------*/
+.subheading {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.notebars-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.notebar {
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+
+    color: #333333;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: #E8F7FF;
+    transition: 200ms;
+}
 
 /*----------Sidebar Bottom---------*/
 .sidebar-bottom {
     width: 80%;
     flex-grow: 1;
-    margin-top: 20px;
-    background-color: red;
+    margin-top: 30px;
+}
+
+.btt-add-note {
+    width: 30px;
+    height: 30px;
+    background-color: #E8F7FF;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 200ms;
+}
+.btt-add-note:hover {
+    background-color: #BAE4FA;
+    fill: #FFFFFF;
+    transform: 200ms;
+}
+
+.add-note-icon {
+    fill: #378DCC;
 }
