@@ -14,7 +14,7 @@ For To Hacks 2022, we've engineered an app which allows users to forego the typi
 3. Each bite size chunk is converted through the **DaVinci engine** to note form, allowing meeting minutes notes to be effectively summarized, and bullet point form ideas to be generated.
 4. Finally, these summarized and bullet point form ideas are sent back to our app, where it is then displayed in our **React** custom-coded text editor for the meeting holders to look back on and edit.
 
-The front-end text editor was first designed in **Figma**, using minimalist design conventions.
+The front-end text editor was first designed in **Figma** and implemented using **JSX**, **CSS**, and **React**, using minimalist design conventions.
 
 ## Challenges we ran into
 While working on this project, we ran into a series of technical issues, which we managed to overcome.
