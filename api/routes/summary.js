@@ -11,8 +11,9 @@ const openai = new OpenAIApi(configuration);
 module.exports ={
   exportSummary: async function(req) {
     const completion = await openai.createCompletion("text-davinci-002", {
+      // Summarize text received from transcribed text
       prompt: generateSummary(req),
-      temperature: 0.6,
+      temperature: 0.7,
     });
     return completion.data.choices[0].text;
   }
