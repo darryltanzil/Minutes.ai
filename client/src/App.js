@@ -21,7 +21,7 @@ class App extends Component {
     return(
     <div className="App">
       <header className="App-header">
-      <p className="App-intro">;{this.state.apiResponse}</p>
+      <p className="App-intro">{this.state.apiResponse}</p>
         <a
           className="App-link"
           href="https://reactjs.org"
