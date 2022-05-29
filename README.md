@@ -1,4 +1,4 @@
-# Scribe.ai
+# Minutes.ai
 
 ## Description
 
@@ -10,11 +10,6 @@ For ToHacks 2022, we've developed an app that allows users to forego the typical
 4. Each idea chunk is roughly one paragraph
 5. Send the string chunk, send to GPT3, and then append a hard coded command.
 6. Send data to the front end, which will be sent to the text editor.
-
-
-## File structure
-* /client/ is frontend
-* /api/ is the backend
 
 ## Technologies / Libraries 
 * HTML, CSS, JS
