@@ -23,7 +23,7 @@ While working on this project, we ran into a series of technical issues, which w
 * **API communication issues**- originally, we had many issues with getting Assembly AI and Open AI to send data to and from each other. After staying up until 4am to resolve these issues, we finally got it to work!
 
 ## Accomplishments that we're proud of
-We're excited that we were able to persevere through all the bugs and glitches to produce a product we are truly proud to present. We wish that the work we did now will prevent much more work for anyone looking to hold meetings in the future, and that this product will be useful in both academic settings, and professional settings.
+We're proud that we were able to persevere through all the bugs and glitches to produce a product that we would actually use in real life! We wish that the work we did now will prevent much more work for anyone looking to hold meetings in the future, and that this product will be useful in both academic settings, and professional settings.
 
 ## What we learned
 * API GET requests
