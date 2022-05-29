@@ -13,8 +13,8 @@ For ToHacks 2022, we've developed an app that allows users to forego the typical
 
 
 ## File structure
-/client/ is frontend
-/api/ is the backend
+* /client/ is frontend
+* /api/ is the backend
 
 ## Technologies / Libraries 
 * HTML, CSS, JS
