@@ -14,6 +14,17 @@ function App() {
   const [selected, setSelected] = useState(0)
   const [writeTo, setWriteTo] = useState(0)
 
+  const [apiResponse, setApiResponse] = useState("")
+
+  useEffect(() => {
+    initializeAPI();
+    callAPI()
+  },[]);
+
+  useEffect(() => {
+    if (!muted) document.getElementById("fake-button").click()
+  }, [muted])
+
   useEffect(() => {
     document.getElementById("heading-editor").value = notes[selected].title
     document.getElementById("body-editor").value = notes[selected].text
@@ -26,6 +37,7 @@ function App() {
   return (
     <appContext.Provider value={{notes, setNotes, muted, setMuted, selected, setSelected, writeTo, setWriteTo}}>
       <div className="App-container">
+        <div id="fake-button" style={{display: "none"}}></div>
         <Sidebar live={notes[writeTo].title}/>
         <div className="UI-container">
           <Texteditor/>
@@ -35,47 +47,37 @@ function App() {
     </appContext.Provider>
   )
 
-  componentDidMount() {
-    initializeAPI()
-  }
-
-  callAPI() {
+  function callAPI() {
     fetch("http://localhost:8000/")
         .then(res => res.text())
-        .then(res => this.setState({ apiResponse: res }));
+        .then(res => setApiResponse(res));
   }
 
-  componentWillMount() {
-    this.callAPI();
-  };
 
-  render() {
-    return(
-    <div className="App">
-      <header>
-        <h1 className="header__title">Real-Time Transcription</h1>
-        <p className="header__sub-title">Try AssemblyAI's new real-time transcription endpoint!</p>
-      </header>
-      <div className="real-time-interface">
-        <p id="real-time-title" className="real-time-interface__title">Click start to begin recording!</p>
-        <p id="button" className="real-time-interface__button">Start</p>
-        <p id="message" className="real-time-interface__message"></p>
-      </div>
-    </div>
-  );
-}
-}
+//   render() {
+//     return(
+//     <div className="App">
+//       <header>
+//         <h1 className="header__title">Real-Time Transcription</h1>
+//         <p className="header__sub-title">Try AssemblyAI's new real-time transcription endpoint!</p>
+//       </header>
+//       <div className="real-time-interface">
+//         <p id="real-time-title" className="real-time-interface__title">Click start to begin recording!</p>
+//         <p id="button" className="real-time-interface__button">Start</p>
+//         <p id="message" className="real-time-interface__message"></p>
+//       </div>
+//     </div>
+//   );
+// }
 
 function initializeAPI() {
   // required dom elements
-const buttonEl = document.getElementById('button');
+const buttonEl = document.getElementById('fake-button');
 const messageEl = document.getElementById('message');
 const titleEl = document.getElementById('real-time-title');
 
 // set initial state of application variables
-console.log(titleEl)
-console.log(buttonEl)
-console.log(messageEl)
+
 messageEl.style.display = 'none';
 let isRecording = false;
 let socket;
@@ -84,6 +86,7 @@ let recordedBefore = false;
 
 // runs real-time transcription and handles global variables
 const startRecording = async () => {
+  console.log("Working!");
   if (isRecording) { 
     if (socket) {
       socket.send(JSON.stringify({terminate_session: true}));
@@ -178,7 +181,10 @@ const startRecording = async () => {
   titleEl.innerText = isRecording ? 'Click stop to end recording!' : 'Click start to begin recording!'
 };
 
-buttonEl.addEventListener('click', () => startRecording());
+  buttonEl.addEventListener('click', () => startRecording());
 }
+}
+
+
 
 export default App;
