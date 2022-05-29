@@ -34,14 +34,14 @@ app.use(function(req, res, next) {
 });
 
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}!`)
-  const new_text = Summary('Bob likes apples. Bob also likes bananas. He walks to the fruit market every morning to buy bananas.')
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}!`)
+//   const new_text = Summary('Bob likes apples. Bob also likes bananas. He walks to the fruit market every morning to buy bananas.')
 
-new_text.then(response =>{
-  console.log(response)
-})
-});
+// new_text.then(response =>{
+//   console.log(response)
+// })
+// });
 
 // error handler
 app.use(function(err, req, res, next) {
