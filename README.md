@@ -2,7 +2,7 @@
 
 ## What it does
 
-For To Hacks 2022, we've engineered an app which allows users to forego the typical administration required when holding meetings. Minutes.ai takes in audio held in meetings, transcribes it, intelligently separates it into bite size chunks of ideas, and then summarizes it into note form, all in Realtime. This allows the person assigned the task of writing notes to have a template in which they can work from, so all the members can focus on what really matters- the content of the meeting.
+For To Hacks 2022, we've engineered an app which allows users to forego the typical administration required when holding meetings. Minutes.ai takes in audio held in meetings, transcribes it, intelligently separates it into bite size chunks of ideas, and then summarizes it into point form, all in Realtime. Through Artificial intelligene, this allows the person assigned the task of writing notes to have a template in which they can work from, so all the members can focus on what really matters- the content of the meeting.
 
 ## How we built it
 1. We first utilized **Assembly API's** powerful audio to text transcribing features, using **Node.js,** web sockets, **Axios**, and **ExpressJS** to connect to their services and receive Realtime audio data.
@@ -30,6 +30,7 @@ We are ecstatic that we were able to persevere through all the bugs and glitches
 * Developed exporting options for Google Docs, Word, etc.
 * Allow Markdown options for our built in text-editor
 * Incorporate a login system, so permanent data can be stored
+* Host our app on a website- we considered utilizing Google Firebase in order to do so, but realized it couldn't instantiate a back-end.
 
 ## Tech Stack
 * React
