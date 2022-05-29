@@ -8,19 +8,23 @@ function Sidebar(props) {
     const {notes, setNotes} = useContext(appContext)
     const {muted, setMuted} = useContext(appContext)
     const {selected, setSelected} = useContext(appContext)
+    const {writeTo, setWriteTo} = useContext(appContext)
     const [noteRenders, setNoteRenders] = useState()
     
     useEffect(() => {
         let tempArr = notes.map((note, index) => {
             return (
-                <div className={selected===note.id? "notebar selected":"notebar"} onClick={() => setSelected(note.id)}>
-                    <div className="notebar-text">{note.title==""? "Untitled":note.title}</div>
+                <div style={{display: "flex", flexDirection: "row"}}>
+                    <div className={selected===note.id? "notebar selected":"notebar"} onClick={() => setSelected(note.id)}>
+                        <div className="notebar-text">{note.title==""? "Untitled":note.title}</div>
+                    </div>
+                    <div key={writeTo} className="btt-writeto" onClick={() => {setWriteTo(index)}} style={writeTo==index? {color: "#378DCC", backgroundColor: "#d6f1ff", transition: "200ms"}:{}}>Use</div>
                 </div>
             )
         })
 
         setNoteRenders(tempArr)
-    }, [notes, selected])
+    }, [notes, selected, writeTo])
     
     return (
         <div className="sidebar-container">
@@ -46,7 +50,7 @@ function Sidebar(props) {
 
     function addNote() {
         let tempArr = notes.slice()
-        tempArr.push({id: notes.length, title: "New Notes", text:""})
+        tempArr.push({id: notes.length, title: "New Note", text:""})
         setNotes(tempArr)
     }
 }

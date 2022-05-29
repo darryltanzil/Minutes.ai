@@ -139,6 +139,30 @@
     overflow-x: hidden;
 }
 
+.btt-writeto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    font-size: 10px;
+    font-weight: 600;
+    color: #BCBCBC;
+    background-color: #EEEEEE;
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: 200ms;
+}
+.btt-writeto:hover {
+    color: #FFFFFF;
+    background-color: #54a0d5;
+    transition: 200ms;
+}
+
 .selected {
     background-color: #E8F7FF;
     transition: 200ms;

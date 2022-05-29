@@ -10,6 +10,7 @@ function App() {
   const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes"))||[{ id: 0, title: "New Note", text: ""}])
   const [muted, setMuted] = useState(true)
   const [selected, setSelected] = useState(0)
+  const [writeTo, setWriteTo] = useState(0)
 
   useEffect(() => {
     document.getElementById("heading-editor").value = notes[selected].title
@@ -21,9 +22,9 @@ function App() {
   }, [notes])
   
   return (
-    <appContext.Provider value={{notes, setNotes, muted, setMuted, selected, setSelected}}>
+    <appContext.Provider value={{notes, setNotes, muted, setMuted, selected, setSelected, writeTo, setWriteTo}}>
       <div className="App-container">
-        <Sidebar live="Spring Fling Planning"/>
+        <Sidebar live={notes[writeTo].title}/>
         <div className="UI-container">
           <Texteditor/>
           <Transcribe/>
