@@ -80,10 +80,10 @@ messageEl.style.display = 'none';
 let isRecording = false;
 let socket;
 let recorder;
+let recordedBefore = false;
 
 // runs real-time transcription and handles global variables
 const startRecording = async () => {
-  console.log("Working");
   if (isRecording) { 
     if (socket) {
       socket.send(JSON.stringify({terminate_session: true}));
