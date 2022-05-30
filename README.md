@@ -8,6 +8,8 @@ Meetings. So many meetings. While brainstorming ideas for the hackathon, we real
 
 For To Hacks 2022, we've engineered an app which allows users to forego the typical administration required when holding meetings. Minutes.ai takes in audio held in meetings, transcribes it, intelligently separates it into bite size chunks of ideas, and then summarizes it into point form, all in Realtime. Through Artificial Intelligence, this allows the person assigned the task of writing notes to have a template in which they can work from, so all the members can focus on what really matters- the content of the meeting.
 
+![image](https://user-images.githubusercontent.com/5387769/171025495-17e396af-fab9-4d16-a0ee-8b308f73081a.png)
+
 ## How we built it
 1. We first utilized **Assembly API's** powerful audio to text transcribing features, using **Node.js,** web sockets, **Axios**, and **ExpressJS** to connect to their services and receive Realtime audio data.
 2. We then separated the transcribed audio of these into bite sized chunks of "ideas", and sent them towards **OpenAI** to be parsed through by the DaVinci Engine.
