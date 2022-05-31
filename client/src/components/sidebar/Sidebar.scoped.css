@@ -1,5 +1,7 @@
 .sidebar-container {
-    width: 450px;
+    width: 350px;
+    min-width: 350px;
+    max-width: 350px;
     height: 100%;
 
     padding-top: 30px;
@@ -17,6 +19,7 @@
 /*----------Sidebar Live----------*/
 .sidebar-live {
     width: 80%;
+    max-width: 80%;
 
     display: flex;
     flex-direction: row;
@@ -26,6 +29,7 @@
 .live-bar {
     flex-grow: 1;
     max-height: 40px;
+    max-width: 80%;
 
     display: flex;
     flex-direction: row;
@@ -114,11 +118,18 @@
     flex-direction: column;
 }
 
-.notebar {
+.notebar-container {
+    display: flex;
+    flex-direction: row;
     width: 100%;
+}
+
+.notebar {
     height: fit-content;
+    max-width: 240px;
 
     display: flex;
+    flex-grow: 1;
     align-items: center;
     justify-content: flex-start;
 

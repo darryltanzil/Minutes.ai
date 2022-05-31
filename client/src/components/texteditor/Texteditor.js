@@ -13,7 +13,7 @@ function Texteditor(props) {
             </div>
             <div className="editor-container">
                 <input id="heading-editor" className="heading-editor" type="text" placeholder="Title here..." defaultValue={notes[selected].heading} onChange={e => {updateNotes("title", e)}}></input>
-                <textarea id="body-editor" className="body-editor" placeholder="Input here..." defaultValue={notes[selected].text} onChange={e => {updateNotes("text", e)}}></textarea>
+                <textarea id="body-editor" className="body-editor" placeholder="Input here..." defaultValue={notes[selected].content} onChange={e => {updateNotes("content", e)}}></textarea>
             </div>
         </div>
     )
@@ -23,8 +23,8 @@ function Texteditor(props) {
         let tempArr = notes.slice()
         if (type == "title") {
             tempArr[selected].title = event.target.value
-        } else if (type == "text") {
-            tempArr[selected].text = event.target.value
+        } else if (type == "content") {
+            tempArr[selected].content = event.target.value
         }
         setNotes(tempArr)
     }
