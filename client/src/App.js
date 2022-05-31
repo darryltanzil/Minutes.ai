@@ -12,7 +12,7 @@ const { Configuration, OpenAIApi } = require("openai");
 
 
 function App() {
-  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes"))||[{ id: 0, title: "New Note", text: ""}])
+  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes"))||[{ id: 0, title: "New Note", content: "", transcription: "" }])
   const [muted, setMuted] = useState(true)
   const [selected, setSelected] = useState(0)
   const [writeTo, setWriteTo] = useState(0)
@@ -47,7 +47,7 @@ const url = 'localhost:9000/summary';
 
   useEffect(() => {
     document.getElementById("heading-editor").value = notes[selected].title
-    document.getElementById("body-editor").value = notes[selected].text
+    document.getElementById("body-editor").value = notes[selected].content
   }, [selected, notes])
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const url = 'localhost:9000/summary';
         <Sidebar live={notes[writeTo].title}/>
         <div className="UI-container">
           <Texteditor/>
-          <Transcribe/>
+          <Transcribe text={notes[selected].transcription}/>
         </div>
       </div>
     </appContext.Provider>

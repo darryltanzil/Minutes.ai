@@ -14,7 +14,7 @@ function Sidebar(props) {
     useEffect(() => {
         let tempArr = notes.map((note, index) => {
             return (
-                <div style={{display: "flex", flexDirection: "row"}}>
+                <div className="notebar-container">
                     <div className={selected===note.id? "notebar selected":"notebar"} onClick={() => setSelected(note.id)}>
                         <div className="notebar-text">{note.title==""? "Untitled":note.title}</div>
                     </div>
@@ -50,7 +50,7 @@ function Sidebar(props) {
 
     function addNote() {
         let tempArr = notes.slice()
-        tempArr.push({id: notes.length, title: "New Note", text:""})
+        tempArr.push({id: notes.length, title: "New Note", content:"", transcription: "" })
         setNotes(tempArr)
     }
 }
