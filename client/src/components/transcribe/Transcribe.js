@@ -12,8 +12,12 @@ function Transcribe(props) {
               </div>
           </div>
 
+<<<<<<< HEAD
           <p id="message"></p>
           <p id="real-time-title" style={{display: "none"}}></p>
+=======
+          {props.text}
+>>>>>>> lincoln-working
         </div>
     </div>
   )
